@@ -15,7 +15,7 @@ def valid_links(links, domain):
 	return [link for link in links if is_valid_link(link, domain)]
 
 def is_valid_link(link, domain):
-	if 'www.'+domain in link:
+	if 'www.'+domain in link or link.startswith('mailto:'):
 		return True
 	elif '.'+domain in link:
 		return False
