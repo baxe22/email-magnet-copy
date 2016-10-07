@@ -15,4 +15,9 @@ def valid_links(links, domain):
 	return [link for link in links if is_valid_link(link, domain)]
 
 def is_valid_link(link, domain):
-	return domain in link
+	if 'www.'+domain in link:
+		return True
+	elif '.'+domain in link:
+		return False
+	else:
+		return domain in link

@@ -3,10 +3,13 @@ import link_extractor as le
 from collections import deque
 import time
 
+debug = False
+
 try:
 	domain = sys.argv[1]
 except:
 	domain = 'jana.com'
+	debug = True
 
 domain_pattern = re.compile(r'^([a-z0-9]+(-[a-z0-9]+)*\.)+[a-z]{2,}$')
 print domain
@@ -18,6 +21,8 @@ urls_to_visit.append(starting_url)
 visited_urls = set()
 while urls_to_visit:
 	url = urls_to_visit.popleft()
+	if debug:
+		print url
 	if url.startswith('mailto:'):
 		print url[7:]
 	elif url not in visited_urls:
