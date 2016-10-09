@@ -1,14 +1,13 @@
 import sys, re
 import link_extractor as le
 from collections import deque
-import time
 
 debug = False
 
 try:
 	domain = sys.argv[1]
 except:
-	domain = 'whereis.mit.edu'
+	domain = 'web.mit.edu'
 	debug = False
 
 domain_pattern = re.compile(r'^([a-z0-9]+(-[a-z0-9]+)*\.)+[a-z]{2,}$')
