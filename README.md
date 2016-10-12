@@ -9,7 +9,7 @@ The only requirements are the lxml and Requests python libraries. These libaries
 #Usage
 To run, use the command line interface:
 '''
-#For web.mit.edu:
+\#For web.mit.edu:
 >python find_email_addresses.py web.mit.edu
 '''
 
